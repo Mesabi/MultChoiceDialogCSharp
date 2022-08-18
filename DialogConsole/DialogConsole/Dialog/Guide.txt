@@ -1,0 +1,50 @@
+﻿0 | Welcome to Mesabi's Multiple Choice Dialog Project | Mesabi | 1
+1 | The goal of this project is to run a multiple choice system of dialog for use in Unity or Godot.| Mesabi | 2
+2 | Currently, this is ran off of a .net console app, for use in CSC330 at Concordia St. Paul | Mesabi | 3
+3 | Let's get started! | Mesabi | 4
+4 | The main idea behind this project is a simple yet robust way of having branching dialog in a video game. | Mesabi | 5
+5 | Here is an example, please select an option: | Mesabi | ?
+? | This is Option A | 6
+? | This is Option B | 7
+6 | As you can see, we can take user input and use it to select a specific option. You selected 'A' | Mesabi | 8
+7 | As you can see, we can take user input and use it to select a specific option. You selected 'B' | Mesabi | 8
+8 | Would you like to select a different option, or continue forward! | Mesabi | ?
+? | Go Back | 5
+? | Continue | 9
+9 | The project utilizes a system of pointers to move from dialog node to dialog node. | Mesabi | 10
+10 | There are 3 different dialog objects to understand. | Mesabi | 11
+11 | DialogChoice and DialogSingle inherit from DialogNode. This allows them to be used interchangibly | Mesabi | 12
+12 | A DialogOption is a singular option in a DialogChoice | Mesabi | 13
+13 | Each DialogNode has the following: A pointer, Text, and an Actor. | Mesabi | 14
+14 | A pointer is a unique number assigned to each Node. With it, you can refrence it from anywhere else in the conversation. | Mesabi | 15
+15 | An Actor sits above the text, as the "speaker" of the Node. As you can see ^ "Mesabi" is the actor in this Node | Mesabi | 16
+16 | I can of course change this, simply by modifying the field. | Mesabi the DialogMaster | 17
+17 | Finally, the DialogNode has a Text object, or what you're reading now. | Mesabi | 18
+18 | A DialogSingle class is the base use of the conversation. It has an additional field, called a "GoTo". This takes you any point in the conversation. | Mesabi | 19
+19 | Do note, if you create a loop of only DialogSingles, you won't be able to naturally exit it. Thus, be careful with your use of pointers and GoTo's. | Mesabi | 20
+20 | The Format for using a DialogSingle is <pointer> <pipe> <text> <pipe> <actor> <pipe> <goto> | Mesabi | 21
+21 | Do note, that the 'pipe' character is the delimiter, and thus is a reserve character. | Mesabi | 22
+22| Would you like to go over that again, or continue? | Mesabi | ?
+? | Again! | 12
+? | Continue! | 23
+23 | Next, we have a DialogChoice. These allow for multiple different GoTo statements to be applied to a singular conversation item. | Mesabi | 24
+24 | The DialogChoice object does NOT have a GoTo Statment of its own, instead it has an array of DialogOptions. | Mesabi | 25
+25 | The DialogOption instead holds the GoTo statment, allowing for moving through the conversation. | Mesabi | 26
+26 | To Declare a DialogChoice, use this syntax: <pointer> <pipe> <text> <pipe> <actor> <pipe> ? | Mesabi | 27
+27 | Then, follow it with 1-8 DialogOptions, using this syntax: ? <pipe> <text> <pipe> <GoTo> | Mesabi | 28
+28 | Would you like to go over that again, or continue? | Mesabi | ?
+? | Again! | 23
+? | Continue! | 29
+29 | A conversation is made up of DialogNodes. It is automatically constructed from a .txt file. | Mesabi | 30
+30 | The conversation does not need to have a linear arangement of pointers, 1->2->3 is no different than 10->20->30 | Mesabi | 31
+31 | However, every pointer must be unique. The program will not check for this, and will instead return the first node with the pointer found, causing errors. | Mesabi | 32
+32 | To exit a conversation, use the GoTo '-1' and the conversation will end.  | Mesabi | 33
+33 | To end the file, the last line should simply read "END"  | Mesabi | 34
+34 | Thus concludes the presentation. Would you like to go over a specific concept, or start over?  | Mesabi | ?
+? | From the top! | 0 
+? | DialogSingles | 18
+? | DialogChoices | 23
+? | End | 35
+35 | Thank you for viewing, and I hope that this DSL helps you to create easy, simple conversations. | Mesabi | 36
+36 | For more information, and how to use this, please refer to the README.txt in the main project folder | Mesabi | 37
+37 | Good Luck, and Godspeed! | Mesabi | -1

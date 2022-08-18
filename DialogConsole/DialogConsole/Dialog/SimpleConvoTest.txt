@@ -1,0 +1,8 @@
+﻿0 | We are beginning a test conversation | Mesabi | 1
+1 | I will now ask a question. | Mesabi | 2
+2 | What would you like to do? | Mesabi | ?
+? | End Conversation | 4
+? | Restart at 1 | 1
+? | Restart at 0| 0
+4 | END | Mesabi | -1
+END
